@@ -3,7 +3,7 @@
 A responsive landing page for **Luma** (an online-courses brand), built from the supplied Figma design
 (*Buzzvel FE – Test 2026*) with **Next.js (App Router)**, **TypeScript** and **Tailwind CSS**.
 
-**Live preview:** https://buzzvel-test-jade.vercel.app/
+**Live preview:** https://buzzvel-test-jade.vercel.app/ (deployed on [Vercel](https://vercel.com), automatically rebuilt on every push to `main`)
 
 All sections from both the desktop (1280px) and mobile (402px) frames are implemented:
 header, hero, categories, featured course, how it works, testimonial + stats, "the people" collage,
