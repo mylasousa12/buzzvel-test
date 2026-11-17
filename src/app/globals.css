@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Design tokens taken from the Figma file (variables + text styles). */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: #f9f8f3;
+  --color-line: #dbdfeb;
+  --color-brand: #3157f6;
+  --color-brand-light: #e2e8ff;
+  --color-peach: #ffcb9f;
+  --color-sun: #ffee7e;
+  --color-sun-light: #fff1c2;
+  --color-coral: #ff704d;
+  --color-ink: #171b2c;
+  --color-muted: #656770;
+  --color-subtle: #6d7384;
+  --color-night: #171b2c;
+  --color-night-muted: #9e9faa;
+  --color-night-soft: #e7e7ec;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-padding-top: 1rem;
+}
+
+/* Smooth anchor scrolling only when the user has not asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* On the blue section the default blue outline would vanish. */
+.on-brand :focus-visible {
+  outline-color: var(--color-sun);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
